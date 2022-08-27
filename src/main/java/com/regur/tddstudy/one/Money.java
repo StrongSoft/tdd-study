@@ -1,6 +1,6 @@
 package com.regur.tddstudy.one;
 
-class Money {
+class Money implements Expression {
 
   protected String currency;
   protected int amount;
@@ -35,5 +35,9 @@ class Money {
   @Override
   public String toString() {
     return currency + " " + amount;
+  }
+
+  Expression plus(Money addend) {
+    return new Money(amount + addend.amount, currency);
   }
 }
